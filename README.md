@@ -1,4 +1,3 @@
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 Creates a TLS certificate using AWS ACM for domains hosted on Akamai.
 The ACM certificate can also be attached to an ALB listener.
 
@@ -19,14 +18,29 @@ module "acm_cert" {
 }
 ```
 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.12.0 |
+| aws | ~> 2.70 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| akamai | n/a |
+| aws | ~> 2.70 |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| alb\_listener\_arn | (Optional) Associate ACM certificate to and ALB listener. | string | `""` | no |
-| domain\_name | Domain name to associate with the ACM certificate. | string | n/a | yes |
-| environment | Environment tag. | string | n/a | yes |
-| zone\_name | The Akamai Fast DNS zone name. | string | n/a | yes |
+|------|-------------|------|---------|:--------:|
+| alb\_listener\_arn | (Optional) Associate ACM certificate to and ALB listener. | `string` | `""` | no |
+| domain\_name | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
+| environment | Environment tag. | `string` | n/a | yes |
+| zone\_name | The Akamai Fast DNS zone name. | `string` | n/a | yes |
 
 ## Outputs
 
